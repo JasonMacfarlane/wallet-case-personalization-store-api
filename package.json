@@ -1,0 +1,39 @@
+{
+  "name": "sunday-cases-api",
+  "version": "1.0.0",
+  "description": "Sunday Cases API",
+  "main": "dist/app.js",
+  "scripts": {
+    "build-ts": "npm run tsc && cp -R src/public dist/public",
+    "tsc": "tsc",
+    "postinstall": "npm run build-ts",
+    "start": "npm run serve",
+    "start:dev": "pm2 start src/app.ts --watch",
+    "serve": "node dist/app.js",
+    "watch-node": "nodemon dist/app.js",
+    "watch-ts": "tsc -w"
+  },
+  "author": "Jason Macfarlane",
+  "license": "ISC",
+  "dependencies": {
+    "@paypal/checkout-server-sdk": "^1.0.2",
+    "@types/mocha": "^2.2.45",
+    "@types/restify": "^7.2.9",
+    "@types/restify-errors": "^4.3.3",
+    "@types/stripe": "^7.13.22",
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
+    "restify": "^8.5.1",
+    "restify-cookies": "^0.2.5",
+    "restify-errors": "^8.0.2",
+    "sharp": "^0.25.3",
+    "stripe": "^8.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "^8.10.4",
+    "typescript": "^3.3.3333"
+  },
+  "engines": {
+    "node": "12.17.x"
+  }
+}
